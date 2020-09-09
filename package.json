@@ -2,9 +2,6 @@
   "name": "kozodoi-club-hack-fixed",
   "version": "1.0.0",
   "private": true,
-  "engines": {
-    "node": "12.18.3"
-  },
   "dependencies": {
     "react-hot-loader": "^4.9.0",
     "react-scripts": "^3.1.2",
@@ -22,19 +19,15 @@
     "react-router": "^5.1.1",
     "react-router-dom": "^5.1.1",
     "cross-env": "^5.2.0"
-  },
-  "main": "index.js",  
+  }, 
   "scripts": {
-    "start": "cross-env PORT=$PORT react-scripts start",
-    "build": "react-scripts build"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "devDependencies": {
-    "cross-env": "^5.2.0",
-    "react-hot-loader": "^4.9.0",
-    "react-scripts": "^3.1.2"
   },
   "browserslist": {
     "production": [
