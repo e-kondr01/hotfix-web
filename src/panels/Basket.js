@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import accounting from 'accounting';
 
@@ -33,6 +33,15 @@ const Basket = ({ match: { params: { areaId, itemId }}, foodAreas, order }) => {
 
     return [ accounting.formatNumber(result, 0, ' '), products ];
   }, [ order, item ]);
+
+  useEffect(() => {
+    if(localStorage.getItem(`parameters`)) {
+      const parameters = JSON.parse(localStorage.getItem(`parameters`));
+      setFaster(parameters.faster);
+      setTime(parameters.time);
+      setSelfService(parameters.selfService);
+    }
+  }, []);
 
   return (
     <div className="Place">
@@ -99,6 +108,12 @@ const Basket = ({ match: { params: { areaId, itemId }}, foodAreas, order }) => {
         <Link
           className="Place__change-product"
           to={`/place/${areaId}/${itemId}`}
+          onClick={
+            () => localStorage.setItem(
+              `parameters`,
+              JSON.stringify({ faster, time, selfService }),
+            )
+          }
         >
           Изменить
         </Link>
