@@ -1,14 +1,23 @@
 {
-  "name": "kozodoi-club-hack-fixed",
+  "name": "kozodoi-club-hack",
   "version": "1.0.0",
-  "private": true,
-  "engines": {
-    "npm": "6.5.0",
-    "node": "11.6.0"
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env PORT=10888 react-scripts start",
+    "build": "react-scripts build",
+    "surge-deploy": "npm run build && surge ./build --domain fixed-web-hack.surge.sh"
   },
-  "dependencies": {
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
     "react-hot-loader": "^4.9.0",
     "react-scripts": "^3.1.2",
+    "surge": "^0.21.3"
+  },
+  "dependencies": {
     "@vkontakte/icons": "^1.10.0",
     "@vkontakte/vk-connect": "^1.6.5",
     "@vkontakte/vkui": "^2.30.7",
@@ -21,17 +30,7 @@
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-router": "^5.1.1",
-    "react-router-dom": "^5.1.1",
-    "cross-env": "^5.2.0"
-  }, 
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "react-router-dom": "^5.1.1"
   },
   "browserslist": {
     "production": [
